@@ -9,4 +9,4 @@ Repo for release `weila-work-web`.
 
 ## Download
 
-[Releases](https://github.com/kvoon3/weila-work-web-release/releases)
+[Releases](https://github.com/kvoon3/weila-work-web-releases/releases)
