@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: kvoon3/weila-account-manager
+          repository: kvoon3/weila-work
           fetch-depth: 0
           token: ${{secrets.GH_REPO_RELEASE}}
 
@@ -35,8 +35,8 @@ jobs:
         run: nr build:web
 
       - name: Create archive
-        run: nr archive
+        run: nr archive:web
       
-      - run: npx changelogithub  -t ${{ secrets.GH_REPO_RELEASE }} --release-github kvoon3/weila-account-manager-release --assets pkg/*.tar.gz # or changelogithub@0.12 to ensure a stable result
+      - run: npx changelogithub  -t ${{ secrets.GH_REPO_RELEASE }} --release-github kvoon3/weila-work-web-release --assets pkg/*.tar.gz # or changelogithub@0.12 to ensure a stable result
         env:
           GITHUB_TOKEN: ${{secrets.GH_REPO_RELEASE}}
