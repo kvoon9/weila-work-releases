@@ -37,6 +37,6 @@ jobs:
       - name: Create archive
         run: nr -C packages/web archive
       
-      - run: npx changelogithub  -t ${{ secrets.GH_REPO_RELEASE }} --release-github kvoon3/weila-work-web-release --assets pkg/*.tar.gz # or changelogithub@0.12 to ensure a stable result
+      - run: npx changelogithub  -t ${{ secrets.GH_REPO_RELEASE }} --release-github kvoon3/weila-work-web-releases --assets pkg/*.tar.gz # or changelogithub@0.12 to ensure a stable result
         env:
           GITHUB_TOKEN: ${{secrets.GH_REPO_RELEASE}}
