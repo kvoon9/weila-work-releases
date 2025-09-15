@@ -30,12 +30,15 @@ jobs:
 
       - name: Install dependenies
         run: nci
+
+      - name: Go into web package
+        run : cd pakcages/web
       
       - name: Build package
-        run: nr build:web
+        run: nr build
 
       - name: Create archive
-        run: nr archive:web
+        run: nr archive
       
       - run: npx changelogithub  -t ${{ secrets.GH_REPO_RELEASE }} --release-github kvoon3/weila-work-web-release --assets pkg/*.tar.gz # or changelogithub@0.12 to ensure a stable result
         env:
