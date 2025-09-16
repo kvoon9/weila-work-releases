@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: kvoon3/weila-work
+          ref: ${{ github.event.client_payload.ref || 'main' }}
           fetch-depth: 0
           token: ${{secrets.GH_REPO_RELEASE}}
 
