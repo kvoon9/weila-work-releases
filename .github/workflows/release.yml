@@ -15,10 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          token: ${{secrets.GH_REPO_RELEASE}}
           repository: kvoon9/weila-work
           ref: ${{ github.event.client_payload.ref || 'main' }}
           fetch-depth: 0
-          token: ${{secrets.GH_REPO_RELEASE}}
 
       - name: Set node
         uses: actions/setup-node@v4
